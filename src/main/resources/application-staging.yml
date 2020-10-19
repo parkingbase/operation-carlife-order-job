@@ -1,0 +1,20 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://pgm-uf6c6289a068xyg1.pg.rds.aliyuncs.com:3433/tyh?ApplicationName=operation-carlife-order-job
+    username: tingyihui
+    password: HFcb2019
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 1
+
+  main:
+    allow-bean-definition-overriding: true
+
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false

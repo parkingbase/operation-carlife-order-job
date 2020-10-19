@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: opeartion-carlife-oil-job
+spec:
+  schedule: "10 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+            - name: regsecret
+          containers:
+            - name: opeartion-carlife-oil-job
+              imagePullPolicy: Always
+          restartPolicy: Never

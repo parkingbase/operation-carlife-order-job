@@ -1,0 +1,13 @@
+server:
+  port: 10002
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: operation-carlife-order-job
+
+feign:
+  hystrix:
+    enabled: true
+
