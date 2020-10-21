@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: opeartion-carlife-order-job
+  name: operation-carlife-order-job
 spec:
   schedule: "10 1 * * *"
   jobTemplate:
@@ -11,6 +11,6 @@ spec:
           imagePullSecrets:
             - name: regsecret
           containers:
-            - name: opeartion-carlife-order-job
+            - name: operation-carlife-order-job
               imagePullPolicy: Always
           restartPolicy: Never
