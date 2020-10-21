@@ -1,5 +1,6 @@
 package com.hfcsbc.operation.carlife.order.job;
 
+import com.hfcsbc.operation.carlife.order.job.service.CariLifeOilOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,9 +20,12 @@ public class OperationCarlifeOrderJobApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner() {
-        log.info("---娃哈哈---");
-        return null;
+    CommandLineRunner commandLineRunner(CariLifeOilOrderService cariLifeOilOrderService) {
+        return e -> {
+            cariLifeOilOrderService.timerUpdateOrderQuantity();
+            cariLifeOilOrderService.timerCreateRecordWithoutClassesYesterday();
+            cariLifeOilOrderService.createReport();
+        };
     }
 
 }

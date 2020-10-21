@@ -39,9 +39,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.hfcsbc</groupId>
-            <artifactId>feitian_data_process</artifactId>
-            <version>1.0.1.RELEASE</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
         </dependency>
 
     </dependencies>
