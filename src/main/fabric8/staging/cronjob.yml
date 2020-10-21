@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: opeartion-carlife-oil-job
 spec:
-  schedule: "10 1 * * *"
+  schedule: "10 14 * * *"
   jobTemplate:
     spec:
       template:
