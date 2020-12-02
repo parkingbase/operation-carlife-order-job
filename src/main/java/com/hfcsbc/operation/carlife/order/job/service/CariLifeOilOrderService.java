@@ -23,4 +23,9 @@ public interface CariLifeOilOrderService {
      */
     void createReport();
 
+    /**
+     * 请求更新商品券状态
+     */
+    void couponSettingOverDue();
+
 }

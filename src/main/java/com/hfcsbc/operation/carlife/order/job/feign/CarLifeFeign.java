@@ -25,4 +25,7 @@ public interface CarLifeFeign {
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/oil/report/timer/createReport", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> createReport();
 
+    @RequestMapping(method = RequestMethod.POST, value = "/carLife/userGoods/api/setting/overdue/inner", consumes = MediaType.APPLICATION_JSON_VALUE)
+    Results<String> couponSettingOverDue();
+
 }

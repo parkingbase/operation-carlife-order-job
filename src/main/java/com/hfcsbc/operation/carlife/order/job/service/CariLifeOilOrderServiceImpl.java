@@ -5,6 +5,7 @@ import com.hfcsbc.utils.result.Code;
 import com.hfcsbc.utils.result.Results;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 
@@ -65,6 +66,21 @@ public class CariLifeOilOrderServiceImpl implements CariLifeOilOrderService {
         log.info((Code.SUCCESS.getBCode() == result.getCode()) ? "成功" : String.format("-- 失败:%s", result.getMsg()));
         log.info("------------------------ 有班次记录无报表处理 end --------------------");
         log.info("------------------------------------------------------------");
+        log.info("------------------------------------------------------------");
+    }
+
+    /**
+     * 请求更新商品券状态
+     */
+    @Override
+    public void couponSettingOverDue() {
+        log.info("------------------------------------------------------------");
+        log.info("------------------------ 商品券状态变更 开始 -------------------");
+
+        Results<String> result =carLifeFeign.couponSettingOverDue();
+        log.info( ObjectUtils.nullSafeEquals(result.getCode(), 8888) ? String.format("-- 成功！%s", result.getData()) : String.format("-- 失败！%s", result.getMsg()));
+
+        log.info("------------------------ 商品券状态变更 结束 --------------------");
         log.info("------------------------------------------------------------");
     }
 

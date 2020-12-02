@@ -28,6 +28,8 @@ public class OperationCarlifeOrderJobApplication {
             cariLifeOilOrderService.timerCreateRecordWithoutClassesYesterday();
             // 班次无报表创建报表
             cariLifeOilOrderService.createReport();
+            //商品券状态更新
+            cariLifeOilOrderService.couponSettingOverDue();
         };
     }
 
