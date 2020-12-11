@@ -24,6 +24,8 @@ public class OperationCarlifeOrderJobApplication {
         return e -> {
             // 更新加油站人气
             cariLifeOilOrderService.timerUpdateOrderQuantity();
+            // 定时任务重新生成失败的报表
+            cariLifeOilOrderService.timerRepeatCreateFailedReport();
             //商品券状态更新
             cariLifeOilOrderService.couponSettingOverDue();
         };

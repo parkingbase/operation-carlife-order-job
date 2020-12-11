@@ -18,6 +18,11 @@ public class CarLifeCallback implements CarLifeFeign{
     }
 
     @Override
+    public Results<String> timerRepeatCreateFailedReport() {
+        return Results.failure(null, "请求失败");
+    }
+
+    @Override
     public Results<String> couponSettingOverDue() {
         return Results.failure(null, "请求接口失败");
     }

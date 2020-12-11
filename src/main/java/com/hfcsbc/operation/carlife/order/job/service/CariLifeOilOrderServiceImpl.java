@@ -39,6 +39,22 @@ public class CariLifeOilOrderServiceImpl implements CariLifeOilOrderService {
     }
 
     /**
+     * 重新生成失败的报表
+     */
+    @Override
+    public void timerRepeatCreateFailedReport() {
+        log.info("------------------------------------------------------------");
+        log.info("------------------------------------------------------------");
+        log.info("------------------------ 重新生成失败的报表 start -------------------");
+        Results<String> result = carLifeFeign.timerRepeatCreateFailedReport();
+        log.info((Code.SUCCESS.getBCode() == result.getCode()) ? String.format("-- 成功！%s", result.getData())
+                : String.format("-- 失败！%s", result.getMsg()));
+        log.info("------------------------ 重新生成失败的报表 end --------------------");
+        log.info("------------------------------------------------------------");
+        log.info("------------------------------------------------------------");
+    }
+
+    /**
      * 请求更新商品券状态
      */
     @Override
