@@ -24,10 +24,6 @@ public class OperationCarlifeOrderJobApplication {
         return e -> {
             // 更新加油站人气
             cariLifeOilOrderService.timerUpdateOrderQuantity();
-            // 创建昨日无班次记录
-            cariLifeOilOrderService.timerCreateRecordWithoutClassesYesterday();
-            // 班次无报表创建报表
-            cariLifeOilOrderService.createReport();
             //商品券状态更新
             cariLifeOilOrderService.couponSettingOverDue();
         };

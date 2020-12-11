@@ -13,17 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @description xxx
  */
 @FeignClient(value = "operation-carlife-order-job", url = "http://tyh-operation:9002", fallback = CarLifeCallback.class)
-//@FeignClient(value = "operation-carlife-order-job", url = "localhost:9002", fallback = CarLifeCallback.class)
 public interface CarLifeFeign {
 
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/oil/order/timer/updateOrderQuantity", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> timerUpdateOrderQuantity();
-
-    @RequestMapping(method = RequestMethod.POST, value = "/carLife/station/classRecord/timer/createRecordWithoutClassesYesterday", consumes = MediaType.APPLICATION_JSON_VALUE)
-    Results<String> timerCreateRecordWithoutClassesYesterday();
-
-    @RequestMapping(method = RequestMethod.POST, value = "/carLife/oil/report/timer/createReport", consumes = MediaType.APPLICATION_JSON_VALUE)
-    Results<String> createReport();
 
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/userGoods/api/setting/overdue/inner", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> couponSettingOverDue();

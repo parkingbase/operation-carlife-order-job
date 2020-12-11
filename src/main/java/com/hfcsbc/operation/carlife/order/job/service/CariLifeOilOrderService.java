@@ -14,16 +14,6 @@ public interface CariLifeOilOrderService {
     void timerUpdateOrderQuantity();
 
     /**
-     * 生成前一天的无班次记录
-     */
-    void timerCreateRecordWithoutClassesYesterday();
-
-    /**
-     * 获取前一天无班次订单报表
-     */
-    void createReport();
-
-    /**
      * 请求更新商品券状态
      */
     void couponSettingOverDue();

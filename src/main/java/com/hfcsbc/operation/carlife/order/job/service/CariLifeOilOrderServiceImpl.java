@@ -39,37 +39,6 @@ public class CariLifeOilOrderServiceImpl implements CariLifeOilOrderService {
     }
 
     /**
-     * 生成前一天的无班次记录
-     */
-    @Override
-    public void timerCreateRecordWithoutClassesYesterday() {
-        log.info("------------------------------------------------------------");
-        log.info("------------------------------------------------------------");
-        log.info("------------------------ 生成无班次记录 start -------------------");
-        Results<String> result = carLifeFeign.timerCreateRecordWithoutClassesYesterday();
-        log.info((Code.SUCCESS.getBCode() == result.getCode()) ? "成功"
-                : String.format("-- 失败:%s", result.getMsg()));
-        log.info("------------------------ 生成无班次记录 end --------------------");
-        log.info("------------------------------------------------------------");
-        log.info("------------------------------------------------------------");
-    }
-
-    /**
-     * 定时任务生成处理无报表数据
-     */
-    @Override
-    public void createReport() {
-        log.info("------------------------------------------------------------");
-        log.info("------------------------------------------------------------");
-        log.info("------------------------ 有班次记录无报表处理 start -------------------");
-        Results<String> result = carLifeFeign.createReport();
-        log.info((Code.SUCCESS.getBCode() == result.getCode()) ? "成功" : String.format("-- 失败:%s", result.getMsg()));
-        log.info("------------------------ 有班次记录无报表处理 end --------------------");
-        log.info("------------------------------------------------------------");
-        log.info("------------------------------------------------------------");
-    }
-
-    /**
      * 请求更新商品券状态
      */
     @Override
