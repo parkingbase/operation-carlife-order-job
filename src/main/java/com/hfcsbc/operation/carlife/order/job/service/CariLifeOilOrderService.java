@@ -23,4 +23,9 @@ public interface CariLifeOilOrderService {
      */
     void couponSettingOverDue();
 
+    /**
+     * 定时任务统计昨日订单量
+     */
+    void timerStatistics();
+
 }

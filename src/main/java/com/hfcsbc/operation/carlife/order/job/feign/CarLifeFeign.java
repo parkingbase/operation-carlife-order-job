@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author qidongliang
@@ -27,5 +28,11 @@ public interface CarLifeFeign {
 
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/userGoods/api/setting/overdue/inner", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> couponSettingOverDue();
+
+    /**
+     * 定时任务统计每日订单量
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/carLife/oilOrderCount/timer/statistics", consumes = MediaType.APPLICATION_JSON_VALUE)
+    Results<String> timerStatistics(@RequestParam Integer day);
 
 }

@@ -26,8 +26,10 @@ public class OperationCarlifeOrderJobApplication {
             cariLifeOilOrderService.timerUpdateOrderQuantity();
             // 定时任务重新生成失败的报表
             cariLifeOilOrderService.timerRepeatCreateFailedReport();
-            //商品券状态更新
+            // 商品券状态更新
             cariLifeOilOrderService.couponSettingOverDue();
+            // 定时任务统计昨日订单量
+            cariLifeOilOrderService.timerStatistics();
         };
     }
 
