@@ -28,7 +28,7 @@ public class CarLifeCallback implements CarLifeFeign{
     }
 
     @Override
-    public Results<String> couponSettingOverDue(Integer day) {
+    public Results<String> timerStatistics(Integer day) {
         return Results.failure(null, "请求接口失败");
     }
 
