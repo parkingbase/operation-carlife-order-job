@@ -28,4 +28,9 @@ public interface CariLifeOilOrderService {
      */
     void timerStatistics();
 
+    /**
+     * 定时任务发放储值卡权益
+     */
+    void timerWelfare();
+
 }

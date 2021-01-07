@@ -80,5 +80,18 @@ public class CariLifeOilOrderServiceImpl implements CariLifeOilOrderService {
         log.info("------------------------------------------------------------");
     }
 
+    /**
+     * 定时任务发放储值卡权益
+     */
+    @Override
+    public void timerWelfare() {
+        log.info("------------------------------------------------------------");
+        log.info("------------------------ 定时任务发放储值卡权益 开始 -------------------");
+        Results<String> result = carLifeFeign.timerWelfare();
+        log.info( ObjectUtils.nullSafeEquals(result.getCode(), 8888) ? String.format("-- 成功！%s", result.getData()) : String.format("-- 失败！%s", result.getMsg()));
+        log.info("------------------------ 定时任务发放储值卡权益 结束 --------------------");
+        log.info("------------------------------------------------------------");
+    }
+
 
 }

@@ -32,4 +32,9 @@ public class CarLifeCallback implements CarLifeFeign{
         return Results.failure(null, "请求接口失败");
     }
 
+    @Override
+    public Results<String> timerWelfare() {
+        return Results.failure(null, "请求接口失败");
+    }
+
 }

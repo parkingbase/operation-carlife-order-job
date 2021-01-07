@@ -35,4 +35,10 @@ public interface CarLifeFeign {
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/oilOrderCount/timer/statistics", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> timerStatistics(@RequestParam Integer day);
 
+    /**
+     * 定时任务发放权益
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/carLife/cardTemplate/timer/welfare", consumes = MediaType.APPLICATION_JSON_VALUE)
+    Results<String> timerWelfare();
+
 }
