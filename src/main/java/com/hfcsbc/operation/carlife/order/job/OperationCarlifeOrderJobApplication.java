@@ -31,7 +31,7 @@ public class OperationCarlifeOrderJobApplication {
             // 定时任务统计昨日订单量
             cariLifeOilOrderService.timerStatistics();
             // 定时任务发放储值卡权益
-
+            cariLifeOilOrderService.timerWelfare();
         };
     }
 
