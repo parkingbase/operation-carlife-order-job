@@ -26,6 +26,12 @@ public interface CarLifeFeign {
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/oil/report/timer/repeatCreateFailedReport", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> timerRepeatCreateFailedReport();
 
+    /**
+     * 重新生成失败的报表 (权益卡)
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/carLife/cardReport/timer/repeatCreateFailedReport", consumes = MediaType.APPLICATION_JSON_VALUE)
+    Results<String> timerRepeatCreateFailedReportCard();
+
     @RequestMapping(method = RequestMethod.POST, value = "/carLife/userGoods/api/setting/overdue/inner", consumes = MediaType.APPLICATION_JSON_VALUE)
     Results<String> couponSettingOverDue();
 

@@ -19,6 +19,11 @@ public interface CariLifeOilOrderService {
     void timerRepeatCreateFailedReport();
 
     /**
+     * 重新生成失败的报表 (权益卡)
+     */
+    void timerRepeatCreateFailedReportCard();
+
+    /**
      * 请求更新商品券状态
      */
     void couponSettingOverDue();
